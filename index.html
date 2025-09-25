@@ -23,8 +23,7 @@ Pakomāts:
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  // Прямая ссылка на JSON на GitHub Pages
-  const jsonURL = 'https://RED-Baltic.github.io/venipak/venipak.json'; 
+  const jsonURL = 'https://RED-Baltic.github.io/venipak/venipak-points.json'; 
 
   fetch(jsonURL)
     .then(response => {
@@ -37,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
       data.forEach(point => {
         const option = document.createElement('option');
         option.value = point.id;
-        option.textContent = `${point.country} — ${point.city}, ${point.address}`;
+        option.textContent = `${point.country} — ${point.city}, ${point.address} (${point.pickup_point})`;
         select.appendChild(option);
       });
     })
@@ -51,8 +50,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </body>
 </html>
-
-
-
-
-
